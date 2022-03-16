@@ -6,17 +6,6 @@ from operator import itemgetter
 from scipy import stats
 
 
-def rank_return(value_dict):
-    rank_dict = {}
-    names = list(value_dict.keys())
-    values = list(value_dict.values())
-    # rank by large to small
-    in_f, sort_f = zip(*sorted(enumerate(values), key=itemgetter(1), reverse=True))
-    for i, index in enumerate(in_f):
-        rank_dict[names[index]] = i
-    return rank_dict
-
-
 def process_file(text):
     zt_answer = {}
     for i, z in enumerate(text):
